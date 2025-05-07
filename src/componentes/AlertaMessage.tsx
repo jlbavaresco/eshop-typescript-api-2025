@@ -18,17 +18,10 @@ const AlertaMessage : FunctionComponent<AlertaMessageProps> = ({ alerta }) => {
         }, 2000);
     }, [alerta]);
 
-    var variant = '';
-    if (alerta.status === 'error') {
-        variant = 'danger'
-    } else {
-        variant = 'primary'
-    }
-
     return (
         <div>
             {(alerta.message.length > 0 && exibir) &&
-                <Alert variant={variant}>
+                <Alert variant={alerta.status === 'error' ? 'danger' : 'primary' }>
                     {alerta.message}
                 </Alert>
             }

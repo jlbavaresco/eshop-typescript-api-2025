@@ -8,7 +8,7 @@ export async function GET(request: NextRequest, context: { params: Promise<{ cod
         return NextResponse.json(categoria, { status: 200 });
     } catch (err) {
         return NextResponse.json(
-            { status: 'Error', message: "Erro: " + err },
+            { status: 'error', message: "Erro: " + err },
             { status: 404 }
         );
     }
@@ -21,7 +21,7 @@ export async function DELETE(request: NextRequest, context: { params: Promise<{ 
         return NextResponse.json({ status: "success", message: resultado }, { status: 200 });
     } catch (err) {
         return NextResponse.json(
-            { status: 'Error', message: "Erro: " + err },
+            { status: 'error', message: "Erro: " + err },
             { status: 404 }
         );
     }
